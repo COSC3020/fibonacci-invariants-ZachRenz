@@ -31,15 +31,15 @@ your answer to this markdown file.
 
 ## Invariant Answer
 
-What we can always assume is true is that the first two items in our array are defined as `x[0] = 0` and `x[1] = 1`, or in terms of the Fibonacci sequence $F_1 = 0$ and $F_2 = 1$. There is never a case when this is not true or it would not be the Fibonacci sequence by definition. We can also assume that the next iteration is always the sum of the previous two iterations. 
+What we can always assume is true is that the first two items in our array are defined as `x[0] = 0` and `x[1] = 1`, or in terms of the Fibonacci sequence $F_1 = 0$ and $F_2 = 1$. There is never a case when this is not true or it would not be the Fibonacci sequence by definition. We can also assume that the next iteration is always the sum of the previous two iterations, this is the invariant for our recursive functions. 
 
 Let's say we are finding `fib(4)`, which should give us `[0, 1, 1, 2, 3]`.
 
 The function passes through `fib` because our iteration is not 0 or 1. Then it goes into `fibFind` and our list is `x = [0,1]`. 
 
-Then the function checks if n == 2, assuming that the list is already defined for $n_0$ and $n_1$. n is not 2 in our case so it recursively calls `fibFind(n-1)` where n is 3, and then does it again until n == 2. Then we finally run `x.push(1)`, or the sum of 0 and 1, I used 1 to save calculating what we can already assume from the invariant when we get to this case. Then we return and get to the recursive case when n = 3 and we run `x.push(x[n-1]+x[n-2])`, the formula for the sequence, and use the values of our invariant (0 and 1 as our first two numbers) to produce the next iteration and so on to build our array and return it when finished. Any particular iteration depends on the two invariant numbers to produce the next iteration and then repeating the formula to finish the array. 
+Then the function checks if n == 2, assuming that the list is already defined for $n_0$ and $n_1$. n is not 2 in our case so it recursively calls `fibFind(n-1)` where n is 3, and then does it again until n == 2. Then we finally run `x.push(1)`, or the sum of 0 and 1, I used 1 to save calculating what we can already assume from the invariant when we get to this case. Then we return and get to the recursive case when n = 3 and we run `x.push(x[n-1]+x[n-2])`, the formula for the sequence and the invariance of our recursive functions, to produce the next iteration and so on to build our array and return it when finished. Any particular iteration will always use the invariant, or the finbonacci forumla, to produce the next value.
 
-So in conclusion, the invariant for this function is that the first two items of our list is defined as `[0,1]`, but most importantly the next iteration is always the sum of the previous two numbers. 
+So in conclusion, the invariant for this function is that the next iteration is always the sum of the previous two numbers. 
 
 ## How this works for any n in fib(n) and for every recursive call
 
