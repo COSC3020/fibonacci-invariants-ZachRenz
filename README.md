@@ -33,6 +33,8 @@ your answer to this markdown file.
 
 After doing some research into the full definition of an invariant, this one helped me the most. 
 
+(Source: https://softwareengineering.stackexchange.com/questions/32727/what-are-invariants-how-can-they-be-used-and-have-you-ever-used-it-in-your-pro)
+
 An invariant is any logical rule that must be obeyed throughout the execution of your program that can be communicated to a human, but not to your compiler.
 
 Or something that holds true to every iteration of my code, is something that I can tell you but my compiler doesn't know even though it follows it, it's a rule that happens naturally in runtime. But we also need that invariant to have a crucial role in how this program actually works and produces our result in runtime.
